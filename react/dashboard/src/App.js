@@ -1,20 +1,27 @@
 import './App.css';
-import Form from './components/Form';
-import FunctionSetInterval from './components/FunctionSetInterval';
-import FunctionSetTimeout from './components/FunctionSetTimeout';
-import ParentComponent from './components/ParentComponent';
-import ToggleButton from './components/ToggleButton';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Projects from './components/projects';
+import Location from './components/Location';
 
 function App() {
   return (
-    <div className="App  App-header">
-      Hello, World!!
-      <FunctionSetInterval />
-      <FunctionSetTimeout />
-      <Form />
-      <ParentComponent />
-      <ToggleButton /> 
-    </div>
+    <>
+      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/location' element={<Location />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

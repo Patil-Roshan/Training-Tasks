@@ -11,9 +11,9 @@ export default function ToggleButton() {
   };
 
   return (
-    <div class="form-check form-switch">
+    <div className="form-check form-switch">
       <input onClick={handleClick}
-        class="form-check-input"
+        className="form-check-input"
         type="checkbox"
         role="switch"
         id="flexSwitchCheckDefault"
