@@ -2,6 +2,7 @@ import './App.css';
 import Form from './components/Form';
 import FunctionSetInterval from './components/FunctionSetInterval';
 import FunctionSetTimeout from './components/FunctionSetTimeout';
+import ParentComponent from './components/ParentComponent';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <FunctionSetInterval />
       <FunctionSetTimeout />
       <Form />
+      <ParentComponent />
     </div>
   );
 }
