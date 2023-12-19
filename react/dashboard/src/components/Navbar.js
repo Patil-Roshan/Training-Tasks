@@ -1,33 +1,34 @@
-import React from 'react'
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import {CssBaseline, Stack} from "@mui/material";
+import FunctionSetInterval from "./FunctionSetInterval";
+import {Link} from "react-router-dom";
 
-export default function Navbar() {
-  return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="/">Navbar</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/about">About</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/contact">Contact</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/projects">Projects</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/location">Location</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  )
+
+export default function ButtonAppBar() {
+    return (
+        <Box sx={{flexGrow: 1,}}>
+            <AppBar position="static">
+                <CssBaseline />
+                <Toolbar>
+                    <Typography variant="h4" component="div" sx={{flexGrow: 1}}>
+                        <Link to={"/"} style={{color: "#FFF"}}> Home</Link>
+                    </Typography>
+                    <div>
+                        <Stack direction="row" spacing={4}>
+                            <Typography> <Link to={"/about"} style={{color: "#FFF"}}> About</Link></Typography>
+                            <Typography> <Link to={"/contact"} style={{color: "#FFF"}}> Contact Us </Link></Typography>
+                            <Typography> <Link to={"/projects"} style={{color: "#FFF"}}> Projects </Link></Typography>
+                            <Typography> <Link to={"/location"} style={{color: "#FFF"}}> Location</Link></Typography>
+                            {/*<Typography><FunctionSetInterval /></Typography>*/}
+                            <FunctionSetInterval />
+                        </Stack>
+                    </div>
+                </Toolbar>
+            </AppBar>
+        </Box>
+    );
 }

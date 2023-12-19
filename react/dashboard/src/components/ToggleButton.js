@@ -1,24 +1,20 @@
 import React, { useState } from "react";
+import {Switch} from "@mui/material";
+const label = { inputProps: { 'aria-label': 'Size switch demo' } };
 
 export default function ToggleButton() {
-  const [toggle, settoggle] = useState("OFF");
+  const [toggle, setToggle] = useState("OFF");
   const handleClick = () => {
     if (toggle === "ON") {
-      settoggle("OFF");
+      setToggle("OFF");
     } else {
-      settoggle("ON")
+      setToggle("ON")
     }
   };
 
   return (
-    <div className="form-check form-switch">
-      <input onClick={handleClick}
-        className="form-check-input"
-        type="checkbox"
-        role="switch"
-        id="flexSwitchCheckDefault"
-      />
-      {toggle}
-    </div>
+      <div>
+        <Switch {...label}  size="small" onClick={handleClick}/>{toggle}
+      </div>
   )
 }

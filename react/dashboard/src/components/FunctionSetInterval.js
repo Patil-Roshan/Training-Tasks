@@ -1,14 +1,25 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 
 export default function FunctionSetInterval() {
-    const handleInterval = () =>{
+    const [date, setDate] = useState(null)
+
+    useEffect(() => {
+        showDate()
+    }, []);
+
+    const showDate = () =>{
         setInterval(()=>{
-            console.log("Hello, from set interval");
-        },2000)
-    }  
+            let current = new Date();
+            let cDate = current.getDate() + '-' + (current.getMonth() + 1) + '-' + current.getFullYear();
+            let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+            let dateTime = cDate + ' ' + cTime;
+            setDate(dateTime);
+
+        },1000)
+    }
     return (
         <div>
-            <button onClick={handleInterval}> Interval </button>
+            {date}
         </div>
     )
 }
